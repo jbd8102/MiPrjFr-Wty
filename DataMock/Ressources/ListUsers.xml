@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ListOfUsers>
+  <User>
+    <Matricule>1310010Z</Matricule>
+    <Nom>Dupont</Nom>
+    <Prenom>Jean</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>jean.dupont@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>0</IsActif>
+  </User>
+  <User>
+    <Matricule>131001AS</Matricule>
+    <Nom>Salim</Nom>
+    <Prenom>Adam</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>adam.salim@jbd.com</Email>
+    <Agence>02</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>LK1001WX</Matricule>
+    <Nom>Addi</Nom>
+    <Prenom>Jean-Marc</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>jean-marc.addi@jbd.com</Email>
+    <Agence>05</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>NH1001HY</Matricule>
+    <Nom>Abn</Nom>
+    <Prenom>Rania</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>rania.abn@jbd.com</Email>
+    <Agence>03</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>HB1001JN</Matricule>
+    <Nom>Ahhr</Nom>
+    <Prenom>Nadine</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>nadine.ahhr@jbd.com</Email>
+    <Agence>02</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>FD1001QS</Matricule>
+    <Nom>Aissa</Nom>
+    <Prenom>Aminato</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>aissa.aminato@jbd.com</Email>
+    <Agence>05</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>AB100109</Matricule>
+    <Nom>Alegre</Nom>
+    <Prenom>Laurence</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>laurence.alegre@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>AB10010D</Matricule>
+    <Nom>Flor</Nom>
+    <Prenom>Sara</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>sara.flor@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>TY1001HS</Matricule>
+    <Nom>Dor</Nom>
+    <Prenom>Meriam</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>meriam.dor@jbd.com</Email>
+    <Agence>07</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>231001GD</Matricule>
+    <Nom>Charle</Nom>
+    <Prenom>Eric</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>eric.charle@jbd.com</Email>
+    <Agence>04</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>2310019Z</Matricule>
+    <Nom>Adlo</Nom>
+    <Prenom>pierre</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>pierre.adlo@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>9910010U</Matricule>
+    <Nom>Anne</Nom>
+    <Prenom>Sophie</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>sophie.anne@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>7810010X</Matricule>
+    <Nom>Flex</Nom>
+    <Prenom>Rania</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>rania.flex@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>Q91001N2</Matricule>
+    <Nom>Herve</Nom>
+    <Prenom>Amine</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>amine.herve@jbd.com</Email>
+    <Agence>07</Agence>
+    <IsActif>1</IsActif>
+  </User>
+  <User>
+    <Matricule>JB10017G</Matricule>
+    <Nom>Alex</Nom>
+    <Prenom>Frédéric</Prenom>
+    <Telephone>+32 12345678</Telephone>
+    <Email>frederic.alex@jbd.com</Email>
+    <Agence>01</Agence>
+    <IsActif>1</IsActif>
+  </User>
+</ListOfUsers>

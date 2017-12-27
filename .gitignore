@@ -3,3 +3,16 @@
 ################################################################################
 
 /.vs
+/packages
+/WebUI/obj/Debug
+/WebUI/Bin/roslyn
+/UTDataMock/obj/Debug
+/DataMock/obj/Debug
+/DAL/obj/Debug
+/CDL/obj/Debug
+/BBL/obj/Debug
+/BBL/bin/Debug
+/WebUI/Bin
+/DataMock/bin/Debug
+/DAL/bin/Debug
+/CDL/bin/Debug

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ListOfAgences>
+	<Agence code="0"></Agence>
+	<Agence code="01">Agence Annexe 01</Agence>
+	<Agence code="02">Agence Annexe 02</Agence>
+	<Agence code="03">Agence Annexe 03</Agence>
+	<Agence code="04">Agence Annexe 04</Agence>
+	<Agence code="05">Agence Annexe 05</Agence>
+	<Agence code="06">Agence Annexe 06</Agence>
+	<Agence code="07">Agence Annexe 07</Agence>
+	<Agence code="08">Agence Annexe 08</Agence>
+	<Agence code="09">Agence Annexe 09</Agence>
+	<Agence code="10">Agence Annexe 10</Agence>
+	<Agence code="11">Agence Annexe 11</Agence>
+	<Agence code="12">Agence Annexe 12</Agence>
+	<Agence code="13">Agence Annexe 13</Agence>
+</ListOfAgences>
