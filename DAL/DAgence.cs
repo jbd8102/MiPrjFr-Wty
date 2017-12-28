@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Caching;
 using Demo.WhoIs.CDL;
 using Demo.WhoIs.DataMock;
 
@@ -38,10 +39,19 @@ namespace Demo.WhoIs.DAL
         public List<EAgence> GetListOfAgences()
         {
             List<EAgence> vListAgences = null;
+            string vKey = "GetListOfAgences";
 
             try
             {
-                vListAgences = DataSource.GetListOfAgences();
+                // Get list from cache
+                vListAgences = MemoryCache.Default[vKey] as List<EAgence>;
+
+                // Get list from data source
+                if(vListAgences == null)
+                {
+                    vListAgences = DataSource.GetListOfAgences();
+                    MemoryCache.Default.Add(vKey, vListAgences, new DateTimeOffset(DateTime.Now.AddMinutes(TConstants.EXPIRATION_TIME)));
+                }
             }
             catch (Exception vException)
             {

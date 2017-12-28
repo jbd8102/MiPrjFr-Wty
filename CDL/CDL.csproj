@@ -43,6 +43,7 @@
     <Compile Include="EAgence.cs" />
     <Compile Include="EUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TConstants.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

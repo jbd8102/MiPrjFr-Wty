@@ -60,6 +60,7 @@ namespace Demo.WhoIs.WebUI
 
             try
             {
+                //vListAgences = AgenceService.GetListOfAgences(Server.MapPath("App_Data\\ListAgences.xml"));
                 vListAgences = AgenceService.GetListOfAgences();
 
                 ddlAgence.DataSource = vListAgences;
@@ -83,6 +84,7 @@ namespace Demo.WhoIs.WebUI
 
             try
             {
+                //vListUsers = UserService.GetListOfUsers(Server.MapPath("App_Data\\ListUsers.xml"));
                 vListUsers = UserService.GetListOfUsers();
 
                 rpUsers.DataSource = vListUsers;
@@ -206,11 +208,5 @@ namespace Demo.WhoIs.WebUI
         }
 
         #endregion
-
-        #region Methods
-
-        #endregion
-
-       
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Caching;
 using Demo.WhoIs.CDL;
 using Demo.WhoIs.DataMock;
 
@@ -38,10 +39,18 @@ namespace Demo.WhoIs.DAL
         public List<EUser> GetListOfUsers()
         {
             List<EUser> vListUsers = null;
+            string vKey = "GetListOfUsers";
 
             try
             {
-                vListUsers = DataSource.GetListOfUsers();
+                // Get list from cache
+                vListUsers = MemoryCache.Default[vKey] as List<EUser>;
+
+                // Get list from data source
+                if (vListUsers == null)
+                {
+                    vListUsers = DataSource.GetListOfUsers();
+                }
             }
             catch (Exception vException)
             {
