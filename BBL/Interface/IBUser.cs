@@ -18,18 +18,23 @@ namespace Demo.WhoIs.BLL
         /// <returns>List of user</returns>
         List<EUser> GetListOfUsers();
 
+        List<EUser> GetListOfUsers(string pFileName);
+
         /// <summary>
         /// Get user by matricule
         /// </summary>
+        /// <param name="pMatricule">Matricule of user</param>
+        /// <param name="pFileName">file name of data</param>
         /// <returns>EUser</returns>
-        EUser GetUserByMatricule(string pMatricule);
+        EUser GetUserByMatricule(string pMatricule, string pFileName);
 
         /// <summary>
         /// Search users by criteria
         /// </summary>
         /// <param name="pCodeAgence">Code of agence</param>
-        /// <param name="pFirstName">User first name</param>
-        /// <returns></returns>
-        List<EUser> SearchUsersByCriteria(string pCodeAgence, string pFirstName);
+        /// <param name="pName">User first name</param>
+        /// <param name="pFileName">File name of data</param>
+        /// <returns>List of user</returns>
+        List<EUser> SearchUsersByCriteria(string pCodeAgence, string pName, string pFileName);
     }
 }

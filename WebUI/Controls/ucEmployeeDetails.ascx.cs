@@ -63,12 +63,12 @@ namespace Demo.WhoIs.WebUI.Controls
 
             if (!string.IsNullOrEmpty(this.MatriculeEmployee))
             {
-                vEUser = UserService.GetUserByMatricule(this.MatriculeEmployee);
+                vEUser = UserService.GetUserByMatricule(this.MatriculeEmployee, _Default.GetUserXmlPath());
 
                 if(vEUser != null)
                 {
                     // Get agence
-                    vEAgence = AgenceService.GetAgenceByCode(vEUser.AgenceCode);
+                    vEAgence = AgenceService.GetAgenceByCode(vEUser.AgenceCode, _Default.GetAgenceXmlPath());
                     if (vEAgence != null)
                     {
                         lblAgenceValue.Text = vEAgence.Libelle;

@@ -19,9 +19,10 @@ namespace Demo.WhoIs.DAL
         List<EAgence> GetListOfAgences();
 
         /// <summary>
-        /// Get agence by code
+        /// Get all agence
         /// </summary>
-        /// <returns>Agence</returns>
-        EAgence GetAgenceByCode(string pCode);
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of agence</returns>
+        List<EAgence> GetListOfAgences(string pFileName);
     }
 }

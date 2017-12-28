@@ -25,7 +25,7 @@ namespace Demo.WhoIs.DataMock
             // TODO : replace WebUI, App_Data and Ressources with the constants
             if (AppDomain.CurrentDomain.BaseDirectory.Contains("WebUI"))
             {
-                vFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data");
+                vFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data");                   
             }
             else
             {
@@ -43,18 +43,41 @@ namespace Demo.WhoIs.DataMock
         {
             string vMessage = string.Empty;
             string vFileName = string.Empty;
-            XDocument vXDocument = null;
-            List<EAgence> vListOfAgence = new List<EAgence>();
+            List<EAgence> vListOfAgence = null;
 
             try
             {
                 vFileName = Path.Combine(this.GetPathName(), "ListAgences.xml");
-                vXDocument = XDocument.Load(vFileName);
-                vListOfAgence = TransfertRowMapperAgence(vXDocument);
+                vListOfAgence = GetListOfAgences(vFileName);
             }
             catch(Exception vException)
             {
                 vMessage = string.Format("Exception fired - Path {0} - Exception : {1}", vFileName, vException.Message);
+                throw new Exception(vMessage);
+            }
+
+            return vListOfAgence;
+        }
+
+        /// <summary>
+        /// Get all agence
+        /// </summary>
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of agence</returns>
+        public List<EAgence> GetListOfAgences(string pFileName)
+        {
+            string vMessage = string.Empty;
+            XDocument vXDocument = null;
+            List<EAgence> vListOfAgence = null;
+
+            try
+            {
+                vXDocument = XDocument.Load(pFileName);
+                vListOfAgence = TransfertRowMapperAgence(vXDocument);
+            }
+            catch (Exception vException)
+            {
+                vMessage = string.Format("Exception fired - Path {0} - Exception : {1}", pFileName, vException.Message);
                 throw new Exception(vMessage);
             }
 
@@ -69,18 +92,41 @@ namespace Demo.WhoIs.DataMock
         {
             string vMessage = string.Empty;
             string vFileName = string.Empty;
+            List<EUser> vListOfUser = null;
+
+            try
+            {
+                vFileName = Path.Combine(this.GetPathName(), "ListUsers.xml");
+                vListOfUser = GetListOfUsers(vFileName);
+            }
+            catch (Exception vException)
+            {
+                vMessage = string.Format("Exception fired - Path {0} - Exception : {1}", vFileName, vException.Message);
+                throw new Exception(vMessage);
+            }
+
+            return vListOfUser;
+        }
+
+        /// <summary>
+        /// Get all user
+        /// </summary>
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of user</returns>
+        public List<EUser> GetListOfUsers(string pFileName)
+        {
+            string vMessage = string.Empty;
             XDocument vXDocument = null;
             List<EUser> vListOfUser = new List<EUser>();
 
             try
             {
-                vFileName = Path.Combine(this.GetPathName(), "ListUsers.xml");
-                vXDocument = XDocument.Load(vFileName);
+                vXDocument = XDocument.Load(pFileName);
                 vListOfUser = TransfertRowMapperUser(vXDocument);
             }
             catch (Exception vException)
             {
-                vMessage = string.Format("Exception fired - Path {0} - Exception : {1}", vFileName, vException.Message);
+                vMessage = string.Format("Exception fired - Path {0} - Exception : {1}", pFileName, vException.Message);
                 throw new Exception(vMessage);
             }
 

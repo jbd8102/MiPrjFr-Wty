@@ -15,13 +15,27 @@ namespace Demo.WhoIs.DataMock
         /// <summary>
         /// Get all agence
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of agence</returns>
         List<EAgence> GetListOfAgences();
+
+        /// <summary>
+        /// Get all agence
+        /// </summary>
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of agence</returns>
+        List<EAgence> GetListOfAgences(string pFileName);
 
         /// <summary>
         /// Get all user
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of user</returns>
         List<EUser> GetListOfUsers();
+
+        /// <summary>
+        /// Get all user
+        /// </summary>
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of user</returns>
+        List<EUser> GetListOfUsers(string pFileName);
     }
 }

@@ -17,11 +17,12 @@ namespace Demo.WhoIs.DAL
         /// </summary>
         /// <returns>List of user</returns>
         List<EUser> GetListOfUsers();
-
+        
         /// <summary>
-        /// Get user by matricule
+        /// Get all user from specific file data
         /// </summary>
-        /// <returns>EUser</returns>
-        EUser GetUserByMatricule(string pMatricule);
+        /// <param name="pFileName"></param>
+        /// <returns></returns>
+        List<EUser> GetListOfUsers(string pFileName);
     }
 }

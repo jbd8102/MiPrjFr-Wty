@@ -62,25 +62,32 @@ namespace Demo.WhoIs.DAL
         }
 
         /// <summary>
-        /// Get agence by code
+        /// Get list of agence
         /// </summary>
-        /// <returns>Agence entity</returns>
-        public EAgence GetAgenceByCode(string pCode)
+        /// <returns>List of agence</returns>
+        public List<EAgence> GetListOfAgences(string pFileName)
         {
             List<EAgence> vListAgences = null;
-            EAgence vEAgence = null;
+            string vKey = $"GetListOfAgences_{ pFileName }";
 
             try
             {
-                vListAgences = this.GetListOfAgences();
-                vEAgence = vListAgences.Single(s => s.Code == pCode);
+                // Get list from cache
+                vListAgences = MemoryCache.Default[vKey] as List<EAgence>;
+
+                // Get list from data source
+                if (vListAgences == null)
+                {
+                    vListAgences = DataSource.GetListOfAgences(pFileName);
+                    MemoryCache.Default.Add(vKey, vListAgences, new DateTimeOffset(DateTime.Now.AddMinutes(TConstants.EXPIRATION_TIME)));
+                }
             }
             catch (Exception vException)
             {
                 throw vException;
             }
 
-            return vEAgence;
+            return vListAgences;
         }
     }
 }

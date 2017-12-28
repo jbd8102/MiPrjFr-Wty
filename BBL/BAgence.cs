@@ -52,16 +52,43 @@ namespace Demo.WhoIs.BLL
         }
 
         /// <summary>
+        /// Get list of agence
+        /// </summary>
+        /// <returns>List of agence</returns>
+        public List<EAgence> GetListOfAgences(string pFileName)
+        {
+            List<EAgence> vListAgences = null;
+
+            try
+            {
+                vListAgences = Dac.GetListOfAgences(pFileName);
+            }
+            catch (Exception vException)
+            {
+                throw vException;
+            }
+
+            return vListAgences;
+        }
+
+        /// <summary>
         /// Get agence by code
         /// </summary>
-        /// <returns>Agence entity</returns>
-        public EAgence GetAgenceByCode(string pCode)
+        /// <param name="pCode">Code agence</param>
+        /// <param name="pFileName">File xml source</param>
+        /// <returns>Agence</returns>
+        public EAgence GetAgenceByCode(string pCode, string pFileName)
         {
+            List<EAgence> vListAgences = null;
             EAgence vEAgence = null;
 
             try
             {
-                vEAgence = Dac.GetAgenceByCode(pCode);
+                vListAgences = Dac.GetListOfAgences(pFileName);
+                if (vListAgences != null && vListAgences.Count > 0)
+                {
+                    vEAgence = vListAgences.Single(s => s.Code == pCode);
+                }
             }
             catch (Exception vException)
             {

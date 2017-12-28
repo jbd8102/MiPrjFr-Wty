@@ -57,11 +57,15 @@ namespace Demo.WhoIs.WebUI
         private void BindListAgences()
         {
             List<EAgence> vListAgences = null;
+            string vFileName = string.Empty;
 
             try
             {
-                //vListAgences = AgenceService.GetListOfAgences(Server.MapPath("App_Data\\ListAgences.xml"));
-                vListAgences = AgenceService.GetListOfAgences();
+                vFileName = _Default.GetAgenceXmlPath();
+                vListAgences = AgenceService.GetListOfAgences(vFileName);
+
+                // TODO : test to delete
+                //vListAgences = AgenceService.GetListOfAgences();
 
                 ddlAgence.DataSource = vListAgences;
                 ddlAgence.DataValueField = "Code";
@@ -81,11 +85,15 @@ namespace Demo.WhoIs.WebUI
         private void BindListUsers()
         {
             List<EUser> vListUsers = null;
+            string vFileName = string.Empty;
 
             try
             {
-                //vListUsers = UserService.GetListOfUsers(Server.MapPath("App_Data\\ListUsers.xml"));
-                vListUsers = UserService.GetListOfUsers();
+                vFileName = _Default.GetUserXmlPath();
+                vListUsers = UserService.GetListOfUsers(vFileName);
+
+                // TODO : test to delete
+                //vListUsers = UserService.GetListOfUsers();
 
                 rpUsers.DataSource = vListUsers;
                 rpUsers.DataBind();
@@ -103,10 +111,12 @@ namespace Demo.WhoIs.WebUI
         private void SearchUser()
         {
             List<EUser> vListUsers = null;
+            string vFileName = string.Empty;
 
             try
             {
-                vListUsers = UserService.SearchUsersByCriteria(ddlAgence.SelectedValue, txtName.Text);
+                vFileName = _Default.GetUserXmlPath();
+                vListUsers = UserService.SearchUsersByCriteria(ddlAgence.SelectedValue, txtName.Text, vFileName);
 
                 rpUsers.DataSource = vListUsers;
                 rpUsers.DataBind();
@@ -115,6 +125,33 @@ namespace Demo.WhoIs.WebUI
             {
                 throw vException;
             }
+        }
+
+        /// <summary>
+        /// Get path of data source
+        /// </summary>
+        /// <returns>Path</returns>
+        private static string GetXmlPath()
+        {
+            return HttpContext.Current.Server.MapPath(System.Web.HttpRuntime.AppDomainAppVirtualPath + TConstants.SXmlPath);
+        }
+
+        /// <summary>
+        /// Get file name of user data
+        /// </summary>
+        /// <returns>Filename</returns>
+        public static string GetUserXmlPath()
+        {
+            return string.Format("{0}\\ListUsers.xml", _Default.GetXmlPath());
+        }
+
+        /// <summary>
+        /// Get file name of agence data
+        /// </summary>
+        /// <returns>Filename</returns>
+        public static string GetAgenceXmlPath()
+        {
+            return string.Format("{0}\\ListAgences.xml", _Default.GetXmlPath());
         }
 
         #endregion

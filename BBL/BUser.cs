@@ -52,12 +52,33 @@ namespace Demo.WhoIs.BLL
         }
 
         /// <summary>
+        /// Get list of user
+        /// </summary>
+        /// <returns>List of user</returns>
+        public List<EUser> GetListOfUsers(string pFileName)
+        {
+            List<EUser> vListUsers = null;
+
+            try
+            {
+                vListUsers = Dac.GetListOfUsers(pFileName);
+            }
+            catch (Exception vException)
+            {
+                throw vException;
+            }
+
+            return vListUsers;
+        }
+
+        /// <summary>
         /// Search users by criteria
         /// </summary>
         /// <param name="pCodeAgence">Code of agence</param>
         /// <param name="pName">User first name</param>
-        /// <returns></returns>
-        public List<EUser> SearchUsersByCriteria(string pCodeAgence, string pName)
+        /// <param name="pFileName">file name of data</param>
+        /// <returns>List of user</returns>
+        public List<EUser> SearchUsersByCriteria(string pCodeAgence, string pName, string pFileName)
         {
             EUser vEUser = null;
             List<EUser> vListUsers = null;
@@ -65,7 +86,7 @@ namespace Demo.WhoIs.BLL
             try
             {
                 // Get all user
-                vListUsers = Dac.GetListOfUsers();
+                vListUsers = Dac.GetListOfUsers(pFileName);
 
                 // Filter by criteria
                 var vResultat = from user in vListUsers
@@ -112,15 +133,22 @@ namespace Demo.WhoIs.BLL
         /// <summary>
         /// Get user by matricule
         /// </summary>
-        /// <param name="pMatricule"></param>
-        /// <returns>User entity</returns>
-        public EUser GetUserByMatricule(string pMatricule)
+        /// <param name="pMatricule">Matricule of user</param>
+        /// <param name="pFileName">file name of data</param>
+        /// <returns>EUser</returns>
+        public EUser GetUserByMatricule(string pMatricule, string pFileName)
         {
             EUser vEUser = null;
+            List<EUser> vListUsers = null;
 
             try
             {
-                vEUser = Dac.GetUserByMatricule(pMatricule);
+                // Get all user
+                vListUsers = Dac.GetListOfUsers(pFileName);
+                if (vListUsers != null && vListUsers.Count > 0)
+                {
+                    vEUser = vListUsers.Single(s => s.Matricule == pMatricule);
+                }
             }
             catch (Exception vException)
             {

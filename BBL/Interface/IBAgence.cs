@@ -19,9 +19,18 @@ namespace Demo.WhoIs.BLL
         List<EAgence> GetListOfAgences();
 
         /// <summary>
+        /// Get all agence from specific data source
+        /// </summary>
+        /// <param name="pFileName"></param>
+        /// <returns></returns>
+        List<EAgence> GetListOfAgences(string pFileName);
+
+        /// <summary>
         /// Get agence by code
         /// </summary>
+        /// <param name="pCode">Code agence</param>
+        /// <param name="pFileName">File xml source</param>
         /// <returns>Agence</returns>
-        EAgence GetAgenceByCode(string pCode);
+        EAgence GetAgenceByCode(string pCode, string pFileName);
     }
 }

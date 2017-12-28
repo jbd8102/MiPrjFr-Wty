@@ -61,26 +61,32 @@ namespace Demo.WhoIs.DAL
         }
 
         /// <summary>
-        /// Get user by matricule
+        /// Get list of user
         /// </summary>
-        /// <param name="pMatricule"></param>
-        /// <returns>User entity</returns>
-        public EUser GetUserByMatricule(string pMatricule)
+        /// <param name="pFileName">File name</param>
+        /// <returns>List of user</returns>
+        public List<EUser> GetListOfUsers(string pFileName)
         {
-            EUser vEUser = null;
             List<EUser> vListUsers = null;
+            string vKey = $"GetListOfUsers_{ pFileName }";
 
             try
             {
-                vListUsers = this.GetListOfUsers();
-                vEUser = vListUsers.Single(s => s.Matricule == pMatricule);
+                // Get list from cache
+                vListUsers = MemoryCache.Default[vKey] as List<EUser>;
+
+                // Get list from data source
+                if (vListUsers == null)
+                {
+                    vListUsers = DataSource.GetListOfUsers(pFileName);
+                }
             }
             catch (Exception vException)
             {
                 throw vException;
             }
 
-            return vEUser;
+            return vListUsers;
         }
     }
 }
