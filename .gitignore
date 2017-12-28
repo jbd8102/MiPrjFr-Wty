@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WebUI/obj/Debug
+/WebUI/Bin
+/UTDataMock/obj
+/UTDataMock/bin/Debug
+/DataMock/obj
+/DataMock/bin
+/DAL/obj
+/DAL/bin
+/CDL/obj
+/CDL/bin
+/BBL/obj
+/BBL/bin
+/.vs
