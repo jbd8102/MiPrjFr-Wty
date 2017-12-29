@@ -129,7 +129,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\ListAgences.xml" />
-    <Content Include="App_Data\ListUsers.xml" />
+    <Content Include="App_Data\ListEmployees.xml" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

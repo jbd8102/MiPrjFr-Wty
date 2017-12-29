@@ -30,20 +30,20 @@ namespace Demo.WhoIs.WebUI
             }
         }
 
-        private IBUser _userService;
+        private IBEmployee _EmployeeService;
         /// <summary>
-        /// User business
+        /// Employee business
         /// </summary>
-        public IBUser UserService
+        public IBEmployee EmployeeService
         {
             get
             {
-                if (_userService == null)
+                if (_EmployeeService == null)
                 {
-                    _userService = new BUser();
+                    _EmployeeService = new BEmployee();
                 }
 
-                return _userService;
+                return _EmployeeService;
             }
         }
 
@@ -80,23 +80,23 @@ namespace Demo.WhoIs.WebUI
         }
 
         /// <summary>
-        /// Get list of user to display
+        /// Get list of Employee to display
         /// </summary>
-        private void BindListUsers()
+        private void BindListEmployees()
         {
-            List<EUser> vListUsers = null;
+            List<EEmployee> vListEmployees = null;
             string vFileName = string.Empty;
 
             try
             {
-                vFileName = _Default.GetUserXmlPath();
-                vListUsers = UserService.GetListOfUsers(vFileName);
+                vFileName = _Default.GetEmployeeXmlPath();
+                vListEmployees = EmployeeService.GetListOfEmployees(vFileName);
 
                 // TODO : test to delete
-                //vListUsers = UserService.GetListOfUsers();
+                //vListEmployees = EmployeeService.GetListOfEmployees();
 
-                rpUsers.DataSource = vListUsers;
-                rpUsers.DataBind();
+                rpEmployees.DataSource = vListEmployees;
+                rpEmployees.DataBind();
             }
             catch (Exception vException)
             {
@@ -106,20 +106,20 @@ namespace Demo.WhoIs.WebUI
         }
 
         /// <summary>
-        /// Search user by criteria
+        /// Search Employee by criteria
         /// </summary>
-        private void SearchUser()
+        private void SearchEmployee()
         {
-            List<EUser> vListUsers = null;
+            List<EEmployee> vListEmployees = null;
             string vFileName = string.Empty;
 
             try
             {
-                vFileName = _Default.GetUserXmlPath();
-                vListUsers = UserService.SearchUsersByCriteria(ddlAgence.SelectedValue, txtName.Text, vFileName);
+                vFileName = _Default.GetEmployeeXmlPath();
+                vListEmployees = EmployeeService.SearchEmployeesByCriteria(ddlAgence.SelectedValue, txtName.Text, vFileName);
 
-                rpUsers.DataSource = vListUsers;
-                rpUsers.DataBind();
+                rpEmployees.DataSource = vListEmployees;
+                rpEmployees.DataBind();
             }
             catch (Exception vException)
             {
@@ -137,12 +137,12 @@ namespace Demo.WhoIs.WebUI
         }
 
         /// <summary>
-        /// Get file name of user data
+        /// Get file name of Employee data
         /// </summary>
         /// <returns>Filename</returns>
-        public static string GetUserXmlPath()
+        public static string GetEmployeeXmlPath()
         {
-            return string.Format("{0}\\ListUsers.xml", _Default.GetXmlPath());
+            return string.Format("{0}\\ListEmployees.xml", _Default.GetXmlPath());
         }
 
         /// <summary>
@@ -168,12 +168,12 @@ namespace Demo.WhoIs.WebUI
             if(IsPostBack == false)
             {
                 BindListAgences();
-                BindListUsers();
+                BindListEmployees();
             }
         }
 
         /// <summary>
-        /// Display user information
+        /// Display Employee information
         /// </summary>
         /// <param name="sender">Button object</param>
         /// <param name="e">Event</param>
@@ -198,7 +198,7 @@ namespace Demo.WhoIs.WebUI
         }
 
         /// <summary>
-        /// User search
+        /// Employee search
         /// </summary>
         /// <param name="sender">Button object</param>
         /// <param name="e">Event</param>
@@ -206,7 +206,7 @@ namespace Demo.WhoIs.WebUI
         {
             try
             {
-                SearchUser();
+                SearchEmployee();
             }
             catch (Exception vException)
             {
@@ -220,20 +220,20 @@ namespace Demo.WhoIs.WebUI
         /// </summary>
         /// <param name="sender">Repeater object</param>
         /// <param name="e">Event</param>
-        protected void rpUsers_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rpEmployees_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            EUser vEUser = null;
+            EEmployee vEEmployee = null;
 
             try
             {
                 if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
                 {
-                    vEUser = (EUser)e.Item.DataItem;
+                    vEEmployee = (EEmployee)e.Item.DataItem;
 
-                    (e.Item.FindControl("lblMatricule") as Label).Text = vEUser.Matricule;
-                    (e.Item.FindControl("lblNomPrenom") as Label).Text = $"{vEUser.Prenom} {vEUser.Nom}";
-                    (e.Item.FindControl("imgInformation") as ImageButton).Attributes.Add("name", vEUser.Matricule);
-                    (e.Item.FindControl("lblIsActif") as Label).Text = vEUser.IsActif ? "OUI" : "NON";
+                    (e.Item.FindControl("lblMatricule") as Label).Text = vEEmployee.Matricule;
+                    (e.Item.FindControl("lblNomPrenom") as Label).Text = $"{vEEmployee.Prenom} {vEEmployee.Nom}";
+                    (e.Item.FindControl("imgInformation") as ImageButton).Attributes.Add("name", vEEmployee.Matricule);
+                    (e.Item.FindControl("lblIsActif") as Label).Text = vEEmployee.IsActif ? "OUI" : "NON";
 
                 }
             }

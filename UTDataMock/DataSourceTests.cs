@@ -19,17 +19,17 @@ namespace Demo.WhoIs.DataMock.Tests
             List<EAgence> vList = null;
 
             vList = vDataSource.GetListOfAgences();
-            Assert.IsTrue(vList.Count > 0);
+            Assert.IsTrue(vList != null && vList.Count > 0);
         }
 
         [TestMethod()]
-        public void GetListOfUsersTest()
+        public void GetListOfEmployeesTest()
         {
             IDataSource vDataSource = new DataSource();
-            List<EUser> vList = null;
+            List<EEmployee> vList = null;
 
-            vList = vDataSource.GetListOfUsers();
-            Assert.IsTrue(vList.Count > 0);
+            vList = vDataSource.GetListOfEmployees();
+            Assert.IsTrue(vList != null && vList.Count > 0);
         }
     }
 }

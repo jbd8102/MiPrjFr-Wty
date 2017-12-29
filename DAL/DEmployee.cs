@@ -10,9 +10,9 @@ using Demo.WhoIs.DataMock;
 namespace Demo.WhoIs.DAL
 {
     /// <summary>
-    /// User DAL
+    /// Employee DAL
     /// </summary>
-    public class DUser : IDUser
+    public class DEmployee : IDEmployee
     {
         private IDataSource _dataSource;
 
@@ -33,23 +33,23 @@ namespace Demo.WhoIs.DAL
         }
 
         /// <summary>
-        /// Get list of user
+        /// Get list of Employee
         /// </summary>
-        /// <returns>List of user</returns>
-        public List<EUser> GetListOfUsers()
+        /// <returns>List of Employee</returns>
+        public List<EEmployee> GetListOfEmployees()
         {
-            List<EUser> vListUsers = null;
-            string vKey = "GetListOfUsers";
+            List<EEmployee> vListEmployees = null;
+            string vKey = "GetListOfEmployees";
 
             try
             {
                 // Get list from cache
-                vListUsers = MemoryCache.Default[vKey] as List<EUser>;
+                vListEmployees = MemoryCache.Default[vKey] as List<EEmployee>;
 
                 // Get list from data source
-                if (vListUsers == null)
+                if (vListEmployees == null)
                 {
-                    vListUsers = DataSource.GetListOfUsers();
+                    vListEmployees = DataSource.GetListOfEmployees();
                 }
             }
             catch (Exception vException)
@@ -57,28 +57,28 @@ namespace Demo.WhoIs.DAL
                 throw vException;
             }
 
-            return vListUsers;
+            return vListEmployees;
         }
 
         /// <summary>
-        /// Get list of user
+        /// Get list of Employee
         /// </summary>
         /// <param name="pFileName">File name</param>
-        /// <returns>List of user</returns>
-        public List<EUser> GetListOfUsers(string pFileName)
+        /// <returns>List of Employee</returns>
+        public List<EEmployee> GetListOfEmployees(string pFileName)
         {
-            List<EUser> vListUsers = null;
-            string vKey = $"GetListOfUsers_{ pFileName }";
+            List<EEmployee> vListEmployees = null;
+            string vKey = $"GetListOfEmployees_{ pFileName }";
 
             try
             {
                 // Get list from cache
-                vListUsers = MemoryCache.Default[vKey] as List<EUser>;
+                vListEmployees = MemoryCache.Default[vKey] as List<EEmployee>;
 
                 // Get list from data source
-                if (vListUsers == null)
+                if (vListEmployees == null)
                 {
-                    vListUsers = DataSource.GetListOfUsers(pFileName);
+                    vListEmployees = DataSource.GetListOfEmployees(pFileName);
                 }
             }
             catch (Exception vException)
@@ -86,7 +86,7 @@ namespace Demo.WhoIs.DAL
                 throw vException;
             }
 
-            return vListUsers;
+            return vListEmployees;
         }
     }
 }

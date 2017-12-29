@@ -9,7 +9,7 @@ namespace Demo.WhoIs.CDL
     /// <summary>
     /// Entity User
     /// </summary>
-    public class EUser
+    public class EEmployee
     {
         /// <summary>
         /// Numero matricule

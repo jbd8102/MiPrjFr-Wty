@@ -42,9 +42,9 @@
   <ItemGroup>
     <Compile Include="BAgence.cs" />
     <Compile Include="Interface\IBAgence.cs" />
-    <Compile Include="Interface\IBUser.cs" />
+    <Compile Include="Interface\IBEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BUser.cs" />
+    <Compile Include="BEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CDL\CDL.csproj">

@@ -40,13 +40,13 @@ namespace Demo.WhoIs.WebUI {
         protected global::System.Web.UI.WebControls.Button btnFilter;
         
         /// <summary>
-        /// rpUsers control.
+        /// rpEmployees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpUsers;
+        protected global::System.Web.UI.WebControls.Repeater rpEmployees;
         
         /// <summary>
         /// ucEmployeeDetails control.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ListOfUsers>
-  <User>
+<ListOfEmployees>
+  <Employee>
     <Matricule>1310010Z</Matricule>
     <Nom>Dupont</Nom>
     <Prenom>Jean</Prenom>
@@ -8,8 +8,8 @@
     <Email>jean.dupont@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>0</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>131001AS</Matricule>
     <Nom>Salim</Nom>
     <Prenom>Adam</Prenom>
@@ -17,8 +17,8 @@
     <Email>adam.salim@jbd.com</Email>
     <Agence>02</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>LK1001WX</Matricule>
     <Nom>Addi</Nom>
     <Prenom>Jean-Marc</Prenom>
@@ -26,8 +26,8 @@
     <Email>jean-marc.addi@jbd.com</Email>
     <Agence>05</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>NH1001HY</Matricule>
     <Nom>Abn</Nom>
     <Prenom>Rania</Prenom>
@@ -35,8 +35,8 @@
     <Email>rania.abn@jbd.com</Email>
     <Agence>03</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>HB1001JN</Matricule>
     <Nom>Ahhr</Nom>
     <Prenom>Nadine</Prenom>
@@ -44,8 +44,8 @@
     <Email>nadine.ahhr@jbd.com</Email>
     <Agence>02</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>FD1001QS</Matricule>
     <Nom>Aissa</Nom>
     <Prenom>Aminato</Prenom>
@@ -53,8 +53,8 @@
     <Email>aissa.aminato@jbd.com</Email>
     <Agence>05</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>AB100109</Matricule>
     <Nom>Alegre</Nom>
     <Prenom>Laurence</Prenom>
@@ -62,8 +62,8 @@
     <Email>laurence.alegre@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>AB10010D</Matricule>
     <Nom>Flor</Nom>
     <Prenom>Sara</Prenom>
@@ -71,8 +71,8 @@
     <Email>sara.flor@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>TY1001HS</Matricule>
     <Nom>Dor</Nom>
     <Prenom>Meriam</Prenom>
@@ -80,8 +80,8 @@
     <Email>meriam.dor@jbd.com</Email>
     <Agence>07</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>231001GD</Matricule>
     <Nom>Charle</Nom>
     <Prenom>Eric</Prenom>
@@ -89,8 +89,8 @@
     <Email>eric.charle@jbd.com</Email>
     <Agence>04</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>2310019Z</Matricule>
     <Nom>Adlo</Nom>
     <Prenom>pierre</Prenom>
@@ -98,8 +98,8 @@
     <Email>pierre.adlo@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>9910010U</Matricule>
     <Nom>Anne</Nom>
     <Prenom>Sophie</Prenom>
@@ -107,8 +107,8 @@
     <Email>sophie.anne@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>7810010X</Matricule>
     <Nom>Flex</Nom>
     <Prenom>Rania</Prenom>
@@ -116,8 +116,8 @@
     <Email>rania.flex@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>Q91001N2</Matricule>
     <Nom>Herve</Nom>
     <Prenom>Amine</Prenom>
@@ -125,8 +125,8 @@
     <Email>amine.herve@jbd.com</Email>
     <Agence>07</Agence>
     <IsActif>1</IsActif>
-  </User>
-  <User>
+  </Employee>
+  <Employee>
     <Matricule>JB10017G</Matricule>
     <Nom>Alex</Nom>
     <Prenom>Frédéric</Prenom>
@@ -134,5 +134,5 @@
     <Email>frederic.alex@jbd.com</Email>
     <Agence>01</Agence>
     <IsActif>1</IsActif>
-  </User>
-</ListOfUsers>
+  </Employee>
+</ListOfEmployees>

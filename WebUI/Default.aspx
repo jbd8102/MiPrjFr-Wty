@@ -17,7 +17,7 @@
     </div>
     <br />
     <div>
-        <asp:Repeater ID="rpUsers" runat="server" OnItemDataBound="rpUsers_ItemDataBound">
+        <asp:Repeater ID="rpEmployees" runat="server" OnItemDataBound="rpEmployees_ItemDataBound">
             <HeaderTemplate>
                 <table class="table table-sm">
                     <tr>

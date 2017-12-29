@@ -30,20 +30,20 @@ namespace Demo.WhoIs.WebUI.Controls
             }
         }
 
-        private IBUser _userService;
+        private IBEmployee _EmployeeService;
         /// <summary>
-        /// User business
+        /// Employee business
         /// </summary>
-        public IBUser UserService
+        public IBEmployee EmployeeService
         {
             get
             {
-                if (_userService == null)
+                if (_EmployeeService == null)
                 {
-                    _userService = new BUser();
+                    _EmployeeService = new BEmployee();
                 }
 
-                return _userService;
+                return _EmployeeService;
             }
         }
 
@@ -58,28 +58,28 @@ namespace Demo.WhoIs.WebUI.Controls
 
         public void UpdateEmployeeInformation()
         {
-            EUser vEUser = null;
+            EEmployee vEEmployee = null;
             EAgence vEAgence = null;
 
             if (!string.IsNullOrEmpty(this.MatriculeEmployee))
             {
-                vEUser = UserService.GetUserByMatricule(this.MatriculeEmployee, _Default.GetUserXmlPath());
+                vEEmployee = EmployeeService.GetEmployeeByMatricule(this.MatriculeEmployee, _Default.GetEmployeeXmlPath());
 
-                if(vEUser != null)
+                if(vEEmployee != null)
                 {
                     // Get agence
-                    vEAgence = AgenceService.GetAgenceByCode(vEUser.AgenceCode, _Default.GetAgenceXmlPath());
+                    vEAgence = AgenceService.GetAgenceByCode(vEEmployee.AgenceCode, _Default.GetAgenceXmlPath());
                     if (vEAgence != null)
                     {
                         lblAgenceValue.Text = vEAgence.Libelle;
                     }
                     
-                    lblMatriculeValue.Text = vEUser.Matricule;
-                    lblFirstNameValue.Text = vEUser.Nom;
-                    lblLastNameValue.Text = vEUser.Prenom;
-                    lblPhoneValue.Text = vEUser.Telephone;
-                    lblEmailValue.Text = vEUser.Email;
-                    lblIsActifValue.Text = vEUser.IsActif ? "OUI" : "NON";
+                    lblMatriculeValue.Text = vEEmployee.Matricule;
+                    lblFirstNameValue.Text = vEEmployee.Nom;
+                    lblLastNameValue.Text = vEEmployee.Prenom;
+                    lblPhoneValue.Text = vEEmployee.Telephone;
+                    lblEmailValue.Text = vEEmployee.Email;
+                    lblIsActifValue.Text = vEEmployee.IsActif ? "OUI" : "NON";
                 }
             }
         }

@@ -26,16 +26,16 @@ namespace Demo.WhoIs.DataMock
         List<EAgence> GetListOfAgences(string pFileName);
 
         /// <summary>
-        /// Get all user
+        /// Get all Employee
         /// </summary>
-        /// <returns>List of user</returns>
-        List<EUser> GetListOfUsers();
+        /// <returns>List of Employee</returns>
+        List<EEmployee> GetListOfEmployees();
 
         /// <summary>
-        /// Get all user
+        /// Get all Employee
         /// </summary>
         /// <param name="pFileName">File name</param>
-        /// <returns>List of user</returns>
-        List<EUser> GetListOfUsers(string pFileName);
+        /// <returns>List of Employee</returns>
+        List<EEmployee> GetListOfEmployees(string pFileName);
     }
 }

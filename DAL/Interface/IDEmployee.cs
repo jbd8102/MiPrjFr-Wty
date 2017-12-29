@@ -8,21 +8,21 @@ using Demo.WhoIs.CDL;
 namespace Demo.WhoIs.DAL
 {
     /// <summary>
-    /// Interface user DAL
+    /// Interface Employee DAL
     /// </summary>
-    public interface IDUser
+    public interface IDEmployee
     {
         /// <summary>
-        /// Get all user
+        /// Get all Employee
         /// </summary>
-        /// <returns>List of user</returns>
-        List<EUser> GetListOfUsers();
+        /// <returns>List of Employee</returns>
+        List<EEmployee> GetListOfEmployees();
         
         /// <summary>
-        /// Get all user from specific file data
+        /// Get all Employee from specific file data
         /// </summary>
         /// <param name="pFileName"></param>
         /// <returns></returns>
-        List<EUser> GetListOfUsers(string pFileName);
+        List<EEmployee> GetListOfEmployees(string pFileName);
     }
 }

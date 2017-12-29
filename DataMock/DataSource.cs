@@ -85,19 +85,19 @@ namespace Demo.WhoIs.DataMock
         }
 
         /// <summary>
-        /// Get all user
+        /// Get all Employee
         /// </summary>
-        /// <returns>List of user</returns>
-        public List<EUser> GetListOfUsers()
+        /// <returns>List of Employee</returns>
+        public List<EEmployee> GetListOfEmployees()
         {
             string vMessage = string.Empty;
             string vFileName = string.Empty;
-            List<EUser> vListOfUser = null;
+            List<EEmployee> vListOfEmployee = null;
 
             try
             {
-                vFileName = Path.Combine(this.GetPathName(), "ListUsers.xml");
-                vListOfUser = GetListOfUsers(vFileName);
+                vFileName = Path.Combine(this.GetPathName(), "ListEmployees.xml");
+                vListOfEmployee = GetListOfEmployees(vFileName);
             }
             catch (Exception vException)
             {
@@ -105,24 +105,24 @@ namespace Demo.WhoIs.DataMock
                 throw new Exception(vMessage);
             }
 
-            return vListOfUser;
+            return vListOfEmployee;
         }
 
         /// <summary>
-        /// Get all user
+        /// Get all Employee
         /// </summary>
         /// <param name="pFileName">File name</param>
-        /// <returns>List of user</returns>
-        public List<EUser> GetListOfUsers(string pFileName)
+        /// <returns>List of Employee</returns>
+        public List<EEmployee> GetListOfEmployees(string pFileName)
         {
             string vMessage = string.Empty;
             XDocument vXDocument = null;
-            List<EUser> vListOfUser = new List<EUser>();
+            List<EEmployee> vListOfEmployee = new List<EEmployee>();
 
             try
             {
                 vXDocument = XDocument.Load(pFileName);
-                vListOfUser = TransfertRowMapperUser(vXDocument);
+                vListOfEmployee = TransfertRowMapperEmployee(vXDocument);
             }
             catch (Exception vException)
             {
@@ -130,7 +130,7 @@ namespace Demo.WhoIs.DataMock
                 throw new Exception(vMessage);
             }
 
-            return vListOfUser;
+            return vListOfEmployee;
         }
 
         /// <summary>
@@ -177,47 +177,47 @@ namespace Demo.WhoIs.DataMock
         }
 
         /// <summary>
-        /// Retrive data from xml document user
+        /// Retrive data from xml document Employee
         /// </summary>
-        /// <returns>List of user</returns>
-        private List<EUser> TransfertRowMapperUser(XDocument pXDocument)
+        /// <returns>List of Employee</returns>
+        private List<EEmployee> TransfertRowMapperEmployee(XDocument pXDocument)
         {
             string vMessage = string.Empty;
-            List<EUser> vListOfUser = new List<EUser>();
-            EUser vEUser = null;
+            List<EEmployee> vListOfEmployee = new List<EEmployee>();
+            EEmployee vEEmployee = null;
 
             if(pXDocument == null)
             {
-                return vListOfUser;
+                return vListOfEmployee;
             }
 
             try
             {
-                var vList = from user in pXDocument.Elements("ListOfUsers").Descendants("User")
+                var vList = from Employee in pXDocument.Elements("ListOfEmployees").Descendants("Employee")
                             select new
                             {
-                                Matricule = user.Element("Matricule").Value,
-                                Nom = user.Element("Nom").Value,
-                                Prenom = user.Element("Prenom").Value,
-                                Telephone = user.Element("Telephone").Value,
-                                Email = user.Element("Email").Value,
-                                AgenceCode = user.Element("Agence").Value,
-                                IsActif = "1".Equals(user.Element("IsActif").Value) ? true : false
+                                Matricule = Employee.Element("Matricule").Value,
+                                Nom = Employee.Element("Nom").Value,
+                                Prenom = Employee.Element("Prenom").Value,
+                                Telephone = Employee.Element("Telephone").Value,
+                                Email = Employee.Element("Email").Value,
+                                AgenceCode = Employee.Element("Agence").Value,
+                                IsActif = "1".Equals(Employee.Element("IsActif").Value) ? true : false
                             };
 
-                foreach (var user in vList)
+                foreach (var Employee in vList)
                 {
-                    vEUser = new EUser();
+                    vEEmployee = new EEmployee();
 
-                    vEUser.Matricule = user.Matricule;
-                    vEUser.Nom = user.Nom;
-                    vEUser.Prenom = user.Prenom;
-                    vEUser.Telephone = user.Telephone;
-                    vEUser.Email = user.Email;
-                    vEUser.AgenceCode = user.AgenceCode;
-                    vEUser.IsActif = user.IsActif;
+                    vEEmployee.Matricule = Employee.Matricule;
+                    vEEmployee.Nom = Employee.Nom;
+                    vEEmployee.Prenom = Employee.Prenom;
+                    vEEmployee.Telephone = Employee.Telephone;
+                    vEEmployee.Email = Employee.Email;
+                    vEEmployee.AgenceCode = Employee.AgenceCode;
+                    vEEmployee.IsActif = Employee.IsActif;
 
-                    vListOfUser.Add(vEUser);
+                    vListOfEmployee.Add(vEEmployee);
                 }
             }
             catch (Exception vException)
@@ -226,7 +226,7 @@ namespace Demo.WhoIs.DataMock
                 throw new Exception(vMessage);
             }
 
-            return vListOfUser;
+            return vListOfEmployee;
         }
     }
 }
