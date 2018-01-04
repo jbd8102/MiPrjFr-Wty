@@ -33,7 +33,7 @@
                         </td>
                         <td>
                             <asp:Label ID="lblNomPrenom" runat="server" />
-                            <asp:ImageButton ID="imgInformation" OnClick="imgInformation_Click" runat="server" ImageUrl="~/Images/InfoGray.png"/>
+                            <asp:ImageButton ID="imgInformation" runat="server" OnClick="imgInformation_Click" ImageUrl="~/Images/InfoGray.png"/>
                         </td>
                         <td>
                             <asp:Label ID="lblIsActif" runat="server" />
